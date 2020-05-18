@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "513248493176",
+    "firebase_url": "https://accident-alert-system-104ac.firebaseio.com",
+    "project_id": "accident-alert-system-104ac",
+    "storage_bucket": "accident-alert-system-104ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513248493176:android:c976149b2d39c8a99af78d",
+        "android_client_info": {
+          "package_name": "com.example.accidentdetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513248493176-dk4i4n73jr37fq5at88nm6sa5vmfo8ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkAw8RwOB3c21fSDNqCwDRQDjq1wwiTD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513248493176-dk4i4n73jr37fq5at88nm6sa5vmfo8ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513248493176:android:0063927bf57677989af78d",
+        "android_client_info": {
+          "package_name": "com.example.ambulanceside"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513248493176-dk4i4n73jr37fq5at88nm6sa5vmfo8ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkAw8RwOB3c21fSDNqCwDRQDjq1wwiTD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513248493176-dk4i4n73jr37fq5at88nm6sa5vmfo8ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
