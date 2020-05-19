@@ -7,23 +7,62 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/initialtv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chal !"
+        android:text="You will be notified when Someone need you"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintVertical_bias="0.044" />
 
     <Button
         android:id="@+id/NavigateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="79dp"
         android:text="Navigate"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="604dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv2"
+        app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="322dp"
+        android:layout_height="201dp"
+        android:text='Accident detected. Please Click the "Navigate" Button to get directions to accident location'
+        android:textAlignment="center"
+        android:textColor="#434242"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nametv"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/nametv"
+        android:layout_width="296dp"
+        android:layout_height="73dp"
+        android:text="'Default name' needs your help"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/initialtv"
+        app:layout_constraintVertical_bias="0.139" />
 </androidx.constraintlayout.widget.ConstraintLayout>

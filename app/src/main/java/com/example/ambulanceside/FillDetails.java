@@ -155,7 +155,7 @@ EditText etname,etage;
                             latw+=latans[i]+",";
                             lonw+=lonans[i]+",";
                         }
-                        dnw+=user.getDisplayName()+",";
+                        dnw+=etname.getText().toString()+",";
                         duw+=user.getUid()+",";
                         latw+=latitude+",";
                         lonw+=longitude+",";
