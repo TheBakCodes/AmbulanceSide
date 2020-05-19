@@ -3,7 +3,9 @@ package com.example.ambulanceside;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,15 +21,28 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
-
+    DatabaseReference myRef;
+    SharedPreferences sharedpreferences;
     Button navigateButton;
-
+    String destinationLatitude = "20.9350° ";    //IGIT,Sarang
+    String destinationLongitude="85.2633° ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        System.out.println("MainActivty aa gaya");
+        sharedpreferences = getSharedPreferences("Ambulance", Context.MODE_PRIVATE);
+        if(sharedpreferences.getString("AccCheck", "0").equals("1")) {
+            destinationLatitude=sharedpreferences.getString("PLat", "0");
+            destinationLongitude=sharedpreferences.getString("PLon", "0");
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+
+            editor.putInt("AccCheck", 0);
+            editor.commit();
+            sendIntnt();
+
+        }
         startService(new Intent(this, MyService.class));
 
 
@@ -80,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendIntnt()
     {
-        String destinationLatitude = "20.9350° ";    //IGIT,Sarang
-        String destinationLongitude="85.2633° ";
+
         String uri = "http://maps.google.com/maps?daddr=" + destinationLatitude + "," + destinationLongitude;
         Toast.makeText(this, "Google Map Kholuchi", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
