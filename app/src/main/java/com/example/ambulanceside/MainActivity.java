@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             editor.putString("AccCheck", "0");
             editor.commit();
-            myRef.setValue("0");
+
 
             mediaPlayer.start();
             navigateButton.setVisibility(View.VISIBLE);
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             nametv.setText(PName+" needs your help");
             nametv.setVisibility(View.VISIBLE);
             secondtv.setVisibility(View.VISIBLE);
+
            // layout.setBackgroundColor(Color.parseColor("#FB0000"));
 
         }
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendIntnt()
     {
+        myRef.setValue("0");
         finish();
         mediaPlayer.stop();
         mediaPlayer.release();
@@ -164,6 +167,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Abe,Google Map install kar age", Toast.LENGTH_LONG).show();
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+
+        myRef.setValue("0");
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("AccCheck", "0");
+        editor.commit();
+
     }
 }
 
